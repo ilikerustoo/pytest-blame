@@ -6,7 +6,7 @@ pytest_plugins = "pytester"
 
 
 def pytest_addoption(parser):
-    """ Print stuff to header with --track """
+    """Print stuff to header with --track"""
     group = parser.getgroup("track")
     group.addoption(
         "--track",
