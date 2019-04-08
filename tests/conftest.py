@@ -22,9 +22,10 @@ def pytest_report_header():
         PATH = "."
         repo = Repo(PATH)
         commits = list(repo.iter_commits())
-        msg = print(
-            "\nLast passing commit --> ", commits[0].author, ":", commits[0].message
-        )
+        for i in range(10):
+            msg = print(
+                "\nLast passing commit --> ", commits[i].author, ":", commits[i].message
+            )
     else:
         msg = print("Can't find the last passing commit")
     return msg
