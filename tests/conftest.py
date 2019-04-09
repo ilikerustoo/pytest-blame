@@ -18,11 +18,15 @@ def pytest_addoption(parser):
 # pylint: disable=E1101
 def pytest_report_header():
     """ Display github commit in header """
+    msg = ""
     if pytest.config.getoption("track"):
         PATH = "."
         repo = Repo(PATH)
         commits = list(repo.iter_commits())
-        for i in range(10):
+        # print("This is commits: ", commits)
+        # print()
+        # print(commits[0].CI)
+        for i in range(100):
             msg = print(
                 "\nLast passing commit --> ", commits[i].author, ":", commits[i].message
             )
